@@ -8,4 +8,3 @@ var logMixin = {
   componentDidMount: function() {this._log('componentDidMount', arguments);},
   componentWillUnmount: function() {this._log('componentWillUnmount', arguments);},
 };
-
