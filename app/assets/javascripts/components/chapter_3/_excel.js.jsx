@@ -9,3 +9,56 @@ var data = [
   ["The Hobbit", "J. R. R. Tolkien", "English", "1937", "100 million"],
   ["She: A History of Adventure", "H. Rider Haggard", "English", "1887", "100 million"]
 ];
+
+var Excel = React.createClass({
+  render: function() {
+    return (
+      <table>
+        <thead>
+          <Header/>
+        </thead>
+        <Row/>
+      </table>
+    )
+  }
+});
+
+var Header = React.createClass({
+  render: function() {
+    _headers = headers.map(function(h,i) {
+      return (
+        <th key={i}>
+          {h}
+        </th>
+      )
+    });
+
+    return (
+      <tr>
+        {_headers}
+      </tr>
+    )
+  }
+});
+
+var Row = React.createClass({
+  render: function() {
+    _data = data.map(function(d, i) {
+      return (
+        <tr key={i}>
+          <td>{d[0]}</td>
+          <td>{d[1]}</td>
+          <td>{d[2]}</td>
+          <td>{d[3]}</td>
+          <td>{d[4]}</td>
+        </tr>
+      )
+    });
+
+    return (
+      <tbody>
+        {_data}
+      </tbody>
+    )
+  }
+});
